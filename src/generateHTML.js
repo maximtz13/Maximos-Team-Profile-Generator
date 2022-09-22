@@ -1,7 +1,7 @@
 // Manager card
 const generateManager = function (manager) {
     return `
-    <div class="col-2 mt-4">
+    <div class="col-6 col-lg-2 mt-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
@@ -22,7 +22,7 @@ const generateManager = function (manager) {
 // Engineer card
 const generateEngineer = function (engineer) {
     return `
-    <div class="col-2 mt-4">
+    <div class="col-6 col-lg-2 mt-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${engineer.name}</h3>
@@ -43,7 +43,7 @@ const generateEngineer = function (engineer) {
 // Intern card 
 const generateIntern = function (intern) {
     return `
-    <div class="col-2 mt-4">
+    <div class="col-6 col-lg-2 mt-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${intern.name}</h3>
@@ -58,6 +58,23 @@ const generateIntern = function (intern) {
     </div>
 </div>
     `
+};
+
+// generate
+const copyFile = () => {
+    return new Promise((resolve, reject) => {
+        fs.copyFile('./src/style.css', './dist/style.css', err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'Stylesheet Created!'
+            });
+        });
+    });
 };
 
 // push array to page 
@@ -100,6 +117,7 @@ generateHTML = (data) => {
     // return to generated html
     const generateTeam = generateTeamPage(employeeCards);
     return generateTeam;
+    
 
 }
 

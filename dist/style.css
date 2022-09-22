@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --secondary: white;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+    background-color: rgb(250, 85, 85);
+    color: var(--secondary);
+    font-size: 50px;
+}
+
+.navbar-brand {
+    font-size: 50px;
+}
+
+.card {
+    box-shadow: 5px 5px 6px;
+    max-width: 100%;
+    border: 0;
+}
+
+.card-header {
+    background-color: hsl(224, 98%, 58%);
+    color: var(--secondary);
+}
+
+.card-body {
+    background-color: var(--secondary);
+    color: black;
+}
+
+.container {
+    margin: 100px auto;
+    justify-content: space-evenly;
+    display: flex;
+    
+}

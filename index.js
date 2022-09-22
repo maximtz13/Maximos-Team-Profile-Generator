@@ -210,7 +210,7 @@ const writeFile = data => {
             console.log(err);
             return;
         } else {
-            console.log("Your team-profe has been generated! Check out index.html file in /dist!")
+            console.log("Your team-profile has been generated! Check out index.html file in /dist!")
         }
     })
 };
