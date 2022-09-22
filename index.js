@@ -1,3 +1,5 @@
+// Generate Page
+const generateHTML = require('./src/generateHTML');
 // Employees
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
@@ -166,6 +168,7 @@ const addEmployee = () => {
             default: false
         },
     ])
+    // Saving Employee data to team array
         .then(employeeData => {
 
             let { name, id, email, role, github, school, confirmAddEmployee } = employeeData;
@@ -182,7 +185,7 @@ const addEmployee = () => {
             } else if (role === "Intern") {
                 employee = new Intern(name, id, email, school);
 
-                
+
                 console.log(`
                 Intern Added!
                 `);
@@ -198,9 +201,29 @@ const addEmployee = () => {
             }
         })
 };
+// End of Questions
 
+// Function to generate HTML page along with stylesheet
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your team-profe has been generated! Check out index.html file in /dist!")
+        }
+    })
+};
+
+// Function call to start app then generate html
 addManager()
     .then(addEmployee)
+    .then(teamArray => {
+        return generateHTML(teamArray);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
     .catch(err => {
         console.log(err);
     });
