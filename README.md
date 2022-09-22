@@ -40,4 +40,4 @@ If your question is still unsolved, please send it to *maximtz99@gmail.com* and 
 !["Sample Photo"](./assets/Screenshot%20(20).png)
 
 ## Demo Video
-[Click here for demo video](https://github.com/maximtz13/Maximos-Team-Profile-Generator)
+[Click here for demo video](https://drive.google.com/file/d/1L9NbIJlwPZAli3mvlIbSUr25VDbzQfFu/view)
